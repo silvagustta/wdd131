@@ -73,3 +73,31 @@ h1 {
     height: auto;
 }
 
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-content img {
+    width: 200px;
+    height: auto;
+}
+
+.location-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.location-content figure {
+    margin: 0;
+}
+.location-content img {
+    width: 200px;
+    height: auto;
+}
+
+
+
