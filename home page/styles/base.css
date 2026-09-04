@@ -46,15 +46,51 @@ nav a:hover {
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-
-    max-width: 1000px;
+    gap: 1rem;
+    
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 h1 {
     text-align: center;
+}
+
+aside {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+ aside h2 {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    margin-top: 0;
+ }
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-content p {
+    flex: 1;
+}
+
+.about-content img {
+    width: 200px;
+    height: auto;
 }
 
 .card {
@@ -77,31 +113,34 @@ h1 {
     height: auto;
 }
 
-.about-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-}
-
-.about-content img {
-    width: 200px;
-    height: auto;
-}
-
 .location-content {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
+.location-content p {
+    flex: 1;
+}
+
 
 .location-content figure {
     margin: 0;
+    flex-shrink: 0;
 }
+
 .location-content img {
     width: 200px;
     height: auto;
 }
 
+footer {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
 
-
+footer p {
+    margin: 0.5rem;
+}
