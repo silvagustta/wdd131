@@ -1,0 +1,6 @@
+@media screen and (min-width: 800px) {
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 800px;
+    }
+}

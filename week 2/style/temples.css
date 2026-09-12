@@ -1,0 +1,62 @@
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+/* header */
+
+#page-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    color: white;
+    padding: 1rem;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: rgb(62, 62, 255);
+}
+
+/* main */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+h1 {
+    grid-column: 1 / 4;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+figure {
+    /* display: grid; */
+    margin: 0 auto;
+    /* grid-template-columns: 1fr; */
+}
