@@ -1,5 +1,8 @@
 const currentYear = new Date().getFullYear();
-const lastModified = new Date(document.lastModified).toLocaleString('en-US');
+
+const lastModified = new Date(document.lastModified).toLocaleString('en-US')
 
 document.getElementById('currentyear').textContent = currentYear;
-document.getElementById('lastModified').textContent = lastModified;
+
+document.getElementById('lastModified').textContent = 
+    document.lastModified;
