@@ -3,4 +3,16 @@
         grid-template-columns: 1fr 1fr 1fr;
         max-width: 800px;
     }
+
+    #menu {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+    flex-direction: row;
+}
 }
