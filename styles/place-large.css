@@ -1,5 +1,7 @@
-@media screen and (min-width: 800px) {
-    picture img {
-        
+@media screen and (min-width: 768px) {
+    .hero-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
     }
 }
