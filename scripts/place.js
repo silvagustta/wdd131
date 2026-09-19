@@ -9,3 +9,5 @@ document.getElementById('lastModified').textContent =
     document.lastModified;
 
 // weather
+
+console.log("JavaScript connected!");

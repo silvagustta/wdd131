@@ -9,6 +9,10 @@
         content="Webpage about my place, country, place I want to visit, etc. I'll be using some subjects that I learned this week.">
     <meta name="author" content="Gustavo da Silva Pereira">
 
+    <!-- google material symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=partly_cloudy_day" />
+
     <!-- css -->
     <link rel="stylesheet" href="styles/place.css">
     <link rel="stylesheet" href="styles/place-large.css">
@@ -19,17 +23,67 @@
 
 <body>
     <header>
-        <h1>Manaus</h1>
+        <h1>Brazil</h1>
     </header>
 
     <main>
         <picture class="hero-image">
-            <source media="(min-width:768px)" srcset="images/arara-azul-large.webp">
-            <img srcset="images/arara-azul.webp" alt="arara-azul">
+            <source media="(min-width: 768px)" srcset="images/arara-azul-large.webp">
+            <img src="images/arara-azul.webp" alt="Blue Macaw">
         </picture>
 
-        <section class="data"></section>
-        <section class="weather"></section>
+        <section class="data">
+            <h2>Data</h2>
+
+            <div>
+                <p>Area:</p>
+                <p>8.515.767 km²</p>
+            </div>
+            <div>
+                <p>Population:</p>
+                <p>214,211,951</p>
+            </div>
+            <div>
+                <p>Capital:</p>
+                <p>Brasília</p>
+            </div>
+            <div>
+                <p>Language:</p>
+                <p>Portuguese</p>
+            </div>
+            <div>
+                <p>Currency:</p>
+                <p>Real (BRL, R$)</p>
+            </div>
+            <div>
+                <p>Time Zone:</p>
+                <p>UTC-2 to UTC-5</p>
+            </div>
+            <div>
+                <p>Calling Code:</p>
+                <p>+55</p>
+            </div>
+            <div>
+                <p>Internet TLD:</p>
+                <p>.br</p>
+            </div>
+        </section>
+
+        <section class="weather">
+            <h2>Weather <span class="material-symbols-outlined">
+                    partly_cloudy_day
+                </span></h2>
+                
+            <div>
+                <p>Temperature: <span id="temperature"></span></p>
+            </div>
+            <div>
+                <p>Wind Speed: <span id="wind-speed"></span></p>
+            </div>
+            <div>
+                <p>Wind Chill: <span id="wind-chill"></span></p>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -37,7 +91,7 @@
             &copy;<span id="currentyear"></span> Gustavo Da Silva | Amazonas, Brazil
         </p>
         <p>
-            last modified: <span id="lastModified"></span>
+            Last Modified: <span id="lastModified"></span>
         </p>
     </footer>
 </body>
