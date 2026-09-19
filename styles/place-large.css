@@ -1,11 +1,12 @@
 @media screen and (min-width: 768px) {
     main {
         position: relative;
+        height: 500px;
     }
 
     .hero-image img {
         width: 100%;
-        height: 500px;
+        height: 600px;
         object-fit: cover;
     }
 
@@ -21,8 +22,14 @@
         right: 5px;
     }
 
+    
     .weather-icon {
         display: none;
+    }
+    
+    .weather h2::after {
+        content: "⛅";
+        margin-left: 10px;
     }
 
     .data,
@@ -35,6 +42,11 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
 
+    .data div, 
+    .weather div {
+        margin: 0.2rem 0;
+    }
+
     .data h2,
     .weather h2 {
         font-family: 'Rosarivo', serif;
@@ -43,5 +55,9 @@
         padding: 0.5rem 1rem;
         margin-bottom: 1rem;
         border-radius: 5px;
+    }
+
+    footer {
+        margin-top: 55px;
     }
 }

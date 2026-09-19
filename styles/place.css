@@ -9,6 +9,23 @@
     --text-color: white;
 }
 
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
 /* header */
 header {
     font-family: 'Rosarivo', serif;
@@ -97,6 +114,7 @@ header {
 /* footer */
 
 footer {
+    position: relative;
     text-align: center;
     font-size: 1rem;
     background-color: var(--primary-color);
