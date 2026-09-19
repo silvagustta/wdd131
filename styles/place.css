@@ -68,10 +68,9 @@ header {
 
 .weather div {
     display: grid;
-    grid-template-columns: 100px 200px;
-    width: 225px;
+    grid-template-columns: 200px 400px;
+    width: 420px;
     column-gap: 20px;
-    
 }
 
 .weather div p:first-child {
