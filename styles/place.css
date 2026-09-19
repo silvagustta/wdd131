@@ -110,11 +110,6 @@ header {
     font-family: 'Rosarivo', serif;
 }
 
-.weather h2::after {
-    content: "⛅";
-    margin-left: 10px;
-}
-
 /* ------------------------------- */
 /* footer */
 
