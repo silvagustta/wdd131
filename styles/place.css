@@ -4,9 +4,9 @@
     box-sizing: border-box ;
 }
 
-/* body */
-body{
-    margin: 0;
+:root {
+    --primary-color: #0B2545;
+    --text-color: white;
 }
 
 /* header */
@@ -14,8 +14,8 @@ header {
     display: flex;
     justify-content: center;
     font-size: 2rem;
-    background-color: #0B2545;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
 /* main */
@@ -66,10 +66,15 @@ header {
     padding: 1rem;
 }
 
+.weather-icon {
+    width: 50px;
+    height: 50px;
+}
+
 .weather div {
     display: grid;
-    grid-template-columns: 200px 400px;
-    width: 420px;
+    grid-template-columns: 100px 100px;
+    width: 220px;
     column-gap: 20px;
 }
 
@@ -86,7 +91,7 @@ header {
 footer {
     text-align: center;
     font-size: 1rem;
-    background-color: #0B2545;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     padding: 1.5rem;
 }
