@@ -1,7 +1,7 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box ;
+    box-sizing: border-box;
 }
 
 :root {
@@ -11,6 +11,7 @@
 
 /* header */
 header {
+    font-family: 'Rosarivo', serif;
     display: flex;
     justify-content: center;
     font-size: 2rem;
@@ -29,6 +30,7 @@ header {
     width: 100%;
     height: auto;
 }
+
 /* ------------------------------ */
 .data {
     display: flex;
@@ -45,7 +47,7 @@ header {
     grid-template-columns: 100px 200px;
     width: 225px;
     column-gap: 20px;
-    
+
 }
 
 .data div p:first-child {
@@ -55,7 +57,7 @@ header {
 .data div p:last-child {
     text-align: left;
 }
- 
+
 .weather {
     display: flex;
     flex-direction: column;
@@ -85,6 +87,12 @@ header {
 .weather div p:last-child {
     text-align: left;
 }
+
+.data h2,
+.weather h2 {
+    font-family: 'Rosarivo', serif;
+}
+
 /* ------------------------------- */
 /* footer */
 

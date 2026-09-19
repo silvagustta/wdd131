@@ -37,6 +37,7 @@
 
     .data h2,
     .weather h2 {
+        font-family: 'Rosarivo', serif;
         background-color: var(--primary-color);
         color: white;
         padding: 0.5rem 1rem;
