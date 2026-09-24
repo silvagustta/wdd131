@@ -1,0 +1,29 @@
+.plant {
+    background-color: lightgreen;
+}
+
+.meat {
+    background-color: lightcoral;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+caption {
+    caption-side: bottom;
+    padding: 10px;
+}
+
+th ,td {
+    border: 1px solid grey;
+    padding: 8px 6px;
+}
+
+td {
+    text-align: center;
+}

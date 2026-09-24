@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <meta name="description" content="How to work with tables in html">
+    <meta name="author" content="Gustavo da Silva Pereira">
+    <link rel="stylesheet" href="style/activity.css">
+</head>
+
+<body>
+    <table>
+        <colgroup>
+            <col>
+            <col span="1" class="Basic">
+            <col span="1" class="Premium">
+            <col span="1" class="Deluxe">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="4">ACME Wildwest Services</th>
+            </tr>
+            <tr>
+                <td></td>
+                <th scope="col">Basic</th>
+                <th scope="col">Premium</th>
+                <th scope="col">Deluxe</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th scope="row">Feature 1</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <th scope="row">Feature 2</td>
+                        <td>❌</td>
+                <td>✔️</td>
+                <td>✔️</td>
+            </tr>
+            <tr>
+                <th scope="row">Feature 3</td>
+                    <td>❌</td>
+                    <td>❌</td>
+                    <td>✔️</td>
+                </tr>
+            </tbody>
+            
+            <caption>Table 1: Account Feature Comparison</caption>
+    </table>
+</body>
+
+</html>
