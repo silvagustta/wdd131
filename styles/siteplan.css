@@ -1,0 +1,252 @@
+```css
+/* General */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #111111;
+}
+
+header {
+    background-color: #111111;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #e63946;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+}
+
+
+/* Main */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-left: 5px solid #e63946;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #e63946;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+}
+
+p {
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Typography examples */
+
+.oswald-example {
+    font-family: 'Oswald', sans-serif;
+}
+
+.arial-example {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Color Schema */
+
+.color-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.color-item {
+    text-align: center;
+    width: 150px;
+}
+
+.color {
+    width: 150px;
+    height: 100px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.primary {
+    background-color: #111111;
+}
+
+.secondary {
+    background-color: #e63946;
+}
+
+.text-color {
+    background-color: #f5f5f5;
+}
+
+
+/* Wireframes */
+
+.wireframe {
+    border: 3px solid #111111;
+    background-color: #eeeeee;
+    padding: 0.5rem;
+    margin: 1rem 0 3rem;
+}
+
+.wire-header {
+    background-color: #111111;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.wire-header span {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+}
+
+.wire-hero {
+    height: 180px;
+    background-color: #cccccc;
+    border: 2px solid #111111;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.wire-title {
+    background-color: #e63946;
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    margin: 0.5rem 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.wire-card {
+    background-color: #d9d9d9;
+    border: 2px solid #111111;
+    padding: 2rem 1rem;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.mobile-wireframe {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mobile-wireframe .wire-card {
+    margin: 0.5rem 0;
+}
+
+.wire-footer {
+    background-color: #111111;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 0.5rem;
+}
+
+
+/* Desktop Wireframe */
+
+.desktop-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #111111;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+footer p {
+    margin: 0.3rem;
+}
+
+
+/* Large screens */
+
+@media screen and (min-width: 768px) {
+
+    main {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    .mobile-wireframe {
+        max-width: 400px;
+    }
+
+    .desktop-wireframe {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+```
