@@ -1,50 +1,68 @@
 const products = [
     {
         id: "fc-1888",
-        name: "flux capacitor",
+        name: "Flux Capacitor",
         averagerating: 4.5
     },
     {
         id: "fc-2050",
-        name: "power laces",
+        name: "Power Laces",
         averagerating: 4.7
     },
     {
         id: "fs-1987",
-        name: "time circuits",
+        name: "Time Circuits",
         averagerating: 3.5
     },
     {
         id: "ac-2000",
-        name: "low voltage reactor",
+        name: "Low Voltage Reactor",
         averagerating: 3.9
     },
     {
         id: "jj-1969",
-        name: "warp equalizer",
+        name: "Warp Equalizer",
         averagerating: 5.0
     }
 ];
 
+
+// Product list
 const productSelect = document.querySelector("#product");
 
-products.forEach(product => {
-    const option = document.createElement("option");
+if (productSelect) {
+    products.forEach(product => {
+        const option = document.createElement("option");
 
-    option.value = product.id;
-    option.textContent = product.name;
+        option.value = product.id;
+        option.textContent = product.name;
 
-    productSelect.appendChild(option);
-});
+        productSelect.appendChild(option);
+    });
+}
 
 
+// Footer year
 const currentYear = new Date().getFullYear();
-document.querySelector("#currentyear").textContent = currentYear;
+const yearElement = document.querySelector("#currentyear");
 
-document.querySelector("#lastModified").textContent = document.lastModified;
+if (yearElement) {
+    yearElement.textContent = currentYear;
+}
 
 
-if (window.location.pathname.includes("review.html")) {
+// Last modified
+const modifiedElement = document.querySelector("#lastModified");
+
+if (modifiedElement) {
+    modifiedElement.textContent = document.lastModified;
+}
+
+
+// Review counter
+const reviewCountElement = document.querySelector("#reviewCount");
+
+if (reviewCountElement) {
 
     let reviewCount = Number(localStorage.getItem("reviewCount")) || 0;
 
@@ -52,5 +70,5 @@ if (window.location.pathname.includes("review.html")) {
 
     localStorage.setItem("reviewCount", reviewCount);
 
-    document.querySelector("#reviewCount").textContent = reviewCount;
-} 
+    reviewCountElement.textContent = reviewCount;
+}
