@@ -1,3 +1,4 @@
+// Categories
 const categories = [
     {
         name: "Sport",
@@ -21,8 +22,19 @@ const categories = [
     }
 ]
 
-// // console.log(categories.length);
-// categories.forEach(function(category) {
-//     console.log(category.name)
-// });
+// Container
+const categoryContainer = document.querySelector("#category-container");
+
+// Card
+categories.forEach(function (category) {
+    const card = `
+        <article>
+            <h3>${category.name}</h3>
+            <p>${category.description}</p>
+        </article>
+    `;
+    // page
+    categoryContainer.insertAdjacentHTML("beforeend", card);
+});
+
 
