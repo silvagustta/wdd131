@@ -4,8 +4,7 @@
     box-sizing: border-box;
  }
 
-
- /* card */
+/* card */
 #category-container {
    display: grid;
    grid-template-columns: 1fr;
