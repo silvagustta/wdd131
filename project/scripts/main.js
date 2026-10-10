@@ -1,4 +1,10 @@
-// Categories
+
+"use strict";
+
+// ================================
+// 1. MOTORCYCLE CATEGORIES
+// ================================
+
 const categories = [
     {
         name: "Sport",
@@ -20,25 +26,28 @@ const categories = [
         name: "Naked",
         description: "Motorcycles with an exposed design and an upright riding position."
     }
-]
+];
 
-// Container
+// Display categories on the home page
 const categoryContainer = document.querySelector("#category-container");
 
-// Card
-categories.forEach(function (category) {
-    const card = `
-        <article>
-            <h3>${category.name}</h3>
-            <p>${category.description}</p>
-        </article>
-    `;
-    // page
-    categoryContainer.insertAdjacentHTML("beforeend", card);
-});
+if (categoryContainer) {
+    categories.forEach(function (category) {
+        const card = `
+            <article class="category-card">
+                <h3>${category.name}</h3>
+                <p>${category.description}</p>
+            </article>
+        `;
 
-// motorcycles
+        categoryContainer.insertAdjacentHTML("beforeend", card);
+    });
+}
 
+
+// ================================
+// 2. MOTORCYCLE DATA
+// ================================
 
 const motorcycles = [
     {
@@ -91,7 +100,10 @@ const motorcycles = [
     }
 ];
 
-// home
+
+// ================================
+// 3. FEATURED MOTORCYCLES ON HOME
+// ================================
 
 const featuredContainer = document.querySelector("#featured-motorcycles");
 
@@ -100,7 +112,7 @@ if (featuredContainer) {
         const card = `
             <article class="motorcycle-card">
                 <h3>${motorcycle.brand} ${motorcycle.name}</h3>
-                <p class="motorcycle-category">${motorcycle.category}</p>
+                <p><strong>Category:</strong> ${motorcycle.category}</p>
                 <p>${motorcycle.description}</p>
             </article>
         `;
@@ -109,53 +121,19 @@ if (featuredContainer) {
     });
 }
 
-// filter 
 
-const motorcycleContainer = document.querySelector("#motorcycle-container");
-const categoryFilter = document.querySelector("#category-filter");
-
-function displayMotorcycles(motorcycleList) {
-    if (!motorcycleContainer) return;
-
-    motorcycleContainer.innerHTML = "";
-
-    motorcycleList.forEach(function (motorcycle) {
-        const card = `
-            <article class="motorcycle-card">
-                <h2>${motorcycle.brand} ${motorcycle.name}</h2>
-                <p><strong>Category:</strong> ${motorcycle.category}</p>
-                <p>${motorcycle.description}</p>
-            </article>
-        `;
-
-        motorcycleContainer.insertAdjacentHTML("beforeend", card);
-    });
-}
-
-if (motorcycleContainer) {
-    displayMotorcycles(motorcycles);
-}
-
-if (categoryFilter) {
-    categoryFilter.addEventListener("change", function () {
-        const selectedCategory = categoryFilter.value;
-
-        if (selectedCategory === "All") {
-            displayMotorcycles(motorcycles);
-        } else {
-            const filteredMotorcycles = motorcycles.filter(function (motorcycle) {
-                return motorcycle.category === selectedCategory;
-            });
-
-            displayMotorcycles(filteredMotorcycles);
-        }
-    });
-}
-
-// favorites
+// ================================
+// 4. FAVORITES WITH LOCAL STORAGE
+// ================================
 
 function getFavorites() {
-    return JSON.parse(localStorage.getItem("motorcycleFavorites")) || [];
+    try {
+        return JSON.parse(
+            localStorage.getItem("motorcycleFavorites")
+        ) || [];
+    } catch (error) {
+        return [];
+    }
 }
 
 function saveFavorite(motorcycleName) {
@@ -166,57 +144,133 @@ function saveFavorite(motorcycleName) {
             return name !== motorcycleName;
         });
 
-        localStorage.setItem("motorcycleFavorites", JSON.stringify(updatedFavorites));
+        localStorage.setItem(
+            "motorcycleFavorites",
+            JSON.stringify(updatedFavorites)
+        );
     } else {
         favorites.push(motorcycleName);
-        localStorage.setItem("motorcycleFavorites", JSON.stringify(favorites));
+
+        localStorage.setItem(
+            "motorcycleFavorites",
+            JSON.stringify(favorites)
+        );
     }
 }
 
-// bottom
 
-motorcycleList.forEach(function (motorcycle) {
-    const favorites = getFavorites();
-    const isFavorite = favorites.includes(motorcycle.name);
+// ================================
+// 5. DISPLAY MOTORCYCLES
+// ================================
 
-    const card = `
-        <article class="motorcycle-card">
-            <h2>${motorcycle.brand} ${motorcycle.name}</h2>
-            <p><strong>Category:</strong> ${motorcycle.category}</p>
-            <p>${motorcycle.description}</p>
-            <button class="favorite-button" data-name="${motorcycle.name}">
-                ${isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-            </button>
-        </article>
-    `;
+const motorcycleContainer = document.querySelector("#motorcycle-container");
+const categoryFilter = document.querySelector("#category-filter");
 
-    motorcycleContainer.insertAdjacentHTML("beforeend", card);
-});
+function displayMotorcycles(motorcycleList) {
+    if (!motorcycleContainer) {
+        return;
+    }
 
-// working bottom
+    motorcycleContainer.innerHTML = "";
 
+    motorcycleList.forEach(function (motorcycle) {
+        const favorites = getFavorites();
+        const isFavorite = favorites.includes(motorcycle.name);
+
+        const card = `
+            <article class="motorcycle-card">
+                <h2>${motorcycle.brand} ${motorcycle.name}</h2>
+                <p><strong>Category:</strong> ${motorcycle.category}</p>
+                <p>${motorcycle.description}</p>
+
+                <button
+                    class="favorite-button"
+                    data-name="${motorcycle.name}"
+                    aria-pressed="${isFavorite}">
+                    ${isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+                </button>
+            </article>
+        `;
+
+        motorcycleContainer.insertAdjacentHTML("beforeend", card);
+    });
+}
+
+// Show all motorcycles when the catalog opens
 if (motorcycleContainer) {
-    motorcycleContainer.addEventListener("click", function (event) {
-        if (event.target.classList.contains("favorite-button")) {
-            const motorcycleName = event.target.dataset.name;
+    displayMotorcycles(motorcycles);
+}
 
-            saveFavorite(motorcycleName);
 
-            const selectedCategory = categoryFilter
-                ? categoryFilter.value
-                : "All";
+// ================================
+// 6. FILTER MOTORCYCLES
+// ================================
 
-            if (selectedCategory === "All") {
-                displayMotorcycles(motorcycles);
-            } else {
-                const filteredMotorcycles = motorcycles.filter(function (motorcycle) {
+if (categoryFilter) {
+    categoryFilter.addEventListener("change", function () {
+        const selectedCategory = categoryFilter.value;
+
+        if (selectedCategory === "All") {
+            displayMotorcycles(motorcycles);
+        } else {
+            const filteredMotorcycles = motorcycles.filter(
+                function (motorcycle) {
                     return motorcycle.category === selectedCategory;
-                });
+                }
+            );
 
-                displayMotorcycles(filteredMotorcycles);
-            }
+            displayMotorcycles(filteredMotorcycles);
         }
     });
 }
 
-// 
+
+// ================================
+// 7. FAVORITE BUTTON EVENTS
+// ================================
+
+if (motorcycleContainer) {
+    motorcycleContainer.addEventListener("click", function (event) {
+        const button = event.target.closest(".favorite-button");
+
+        if (!button || !motorcycleContainer.contains(button)) {
+            return;
+        }
+
+        const motorcycleName = button.dataset.name;
+
+        saveFavorite(motorcycleName);
+
+        const selectedCategory = categoryFilter
+            ? categoryFilter.value
+            : "All";
+
+        if (selectedCategory === "All") {
+            displayMotorcycles(motorcycles);
+        } else {
+            const filteredMotorcycles = motorcycles.filter(
+                function (motorcycle) {
+                    return motorcycle.category === selectedCategory;
+                }
+            );
+
+            displayMotorcycles(filteredMotorcycles);
+        }
+    });
+}
+
+
+// ================================
+// 8. FOOTER DATE INFORMATION
+// ================================
+
+const currentYear = document.querySelector("#currentyear");
+const lastModified = document.querySelector("#lastModified");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+if (lastModified) {
+    lastModified.textContent = document.lastModified;
+}
