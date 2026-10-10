@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Motorcycle Catalog | Motorcycle.inc</title>
+    <meta name="description" content="Explore motorcycle models and compare categories at Motocycle.inc.">
+    <meta name="author" content="Gustavo da Silva Pereira">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/base-large.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html">Motocycle.inc</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="motorcycles.html">Motorcycles</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="references.html">References</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Motorcycle Catalog</h1>
+        <p>Explore different motorcycle models and find the category that interests you.</p>
+
+        <section>
+            <h2>Filter Motorcycles</h2>
+            <label for="category-filter">Choose a category:</label>
+            <select id="category-filter">
+                <option value="All">All Categories</option>
+                <option value="Sport">Sport</option>
+                <option value="Cruiser">Cruiser</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Touring">Touring</option>
+                <option value="Naked">Naked</option>
+            </select>
+        </section>
+
+        <section>
+            <h2>All Motorcycles</h2>
+            <div id="motorcycle-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Motocycle.inc</p>
+        <p>Gustavo da Silva Pereira</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
