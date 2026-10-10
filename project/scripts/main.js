@@ -151,3 +151,72 @@ if (categoryFilter) {
         }
     });
 }
+
+// favorites
+
+function getFavorites() {
+    return JSON.parse(localStorage.getItem("motorcycleFavorites")) || [];
+}
+
+function saveFavorite(motorcycleName) {
+    const favorites = getFavorites();
+
+    if (favorites.includes(motorcycleName)) {
+        const updatedFavorites = favorites.filter(function (name) {
+            return name !== motorcycleName;
+        });
+
+        localStorage.setItem("motorcycleFavorites", JSON.stringify(updatedFavorites));
+    } else {
+        favorites.push(motorcycleName);
+        localStorage.setItem("motorcycleFavorites", JSON.stringify(favorites));
+    }
+}
+
+// bottom
+
+motorcycleList.forEach(function (motorcycle) {
+    const favorites = getFavorites();
+    const isFavorite = favorites.includes(motorcycle.name);
+
+    const card = `
+        <article class="motorcycle-card">
+            <h2>${motorcycle.brand} ${motorcycle.name}</h2>
+            <p><strong>Category:</strong> ${motorcycle.category}</p>
+            <p>${motorcycle.description}</p>
+            <button class="favorite-button" data-name="${motorcycle.name}">
+                ${isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+            </button>
+        </article>
+    `;
+
+    motorcycleContainer.insertAdjacentHTML("beforeend", card);
+});
+
+// working bottom
+
+if (motorcycleContainer) {
+    motorcycleContainer.addEventListener("click", function (event) {
+        if (event.target.classList.contains("favorite-button")) {
+            const motorcycleName = event.target.dataset.name;
+
+            saveFavorite(motorcycleName);
+
+            const selectedCategory = categoryFilter
+                ? categoryFilter.value
+                : "All";
+
+            if (selectedCategory === "All") {
+                displayMotorcycles(motorcycles);
+            } else {
+                const filteredMotorcycles = motorcycles.filter(function (motorcycle) {
+                    return motorcycle.category === selectedCategory;
+                });
+
+                displayMotorcycles(filteredMotorcycles);
+            }
+        }
+    });
+}
+
+// 
