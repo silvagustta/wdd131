@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn about Motorcycle.inc, our mission, and our passion for helping riders explore motorcycle types and models.">
+    <meta name="author" content="Gustavo da Silva Pereira">
+
+    <title>About Us | Motorcycle.inc</title>
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/base-large.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <a class="site-logo" href="index.html">Motorcycle.inc</a>
+
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="primary-navigation">
+                ☰
+            </button>
+
+            <nav id="primary-navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="motorcycles.html">Motorcycles</a></li>
+                    <li><a href="about.html" aria-current="page">About Us</a></li>
+                    <li><a href="references.html">References</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <h1>About Motorcycle.inc</h1>
+
+        <section>
+            <h2>Who We Are</h2>
+            <p>
+                Motorcycle.inc is an informational website created for people
+                who want to learn more about motorcycles. Whether you are a
+                beginner or an experienced rider, our goal is to make exploring
+                different motorcycle models and categories easier.
+            </p>
+        </section>
+
+        <section>
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to provide clear and accessible information
+                about motorcycle categories, features, and models. We want
+                visitors to explore their options, discover new motorcycles,
+                and develop their interest in motorcycle culture.
+            </p>
+        </section>
+
+        <section>
+            <h2>Explore and Connect</h2>
+            <p>
+                From sport motorcycles to cruisers, adventure bikes, touring
+                motorcycles, and naked bikes, Motorcycle.inc helps visitors
+                discover the differences between motorcycle styles.
+            </p>
+            <p>
+                Use our <a href="motorcycles.html">motorcycle catalog</a>
+                to explore the models featured on our website.
+            </p>
+        </section>
+
+        <section>
+            <h2>Join Our Community</h2>
+            <p>
+                Tell us what interests you about motorcycles. Your feedback
+                helps us understand what visitors would like to explore.
+            </p>
+
+            <form id="community-form">
+                <label for="visitor-name">Your name:</label>
+                <input type="text" id="visitor-name" name="visitor-name" autocomplete="name" required>
+
+                <label for="visitor-email">Email address:</label>
+                <input type="email" id="visitor-email" name="visitor-email" autocomplete="email" required>
+
+                <label for="motorcycle-interest">Your favorite category:</label>
+                <select id="motorcycle-interest" name="motorcycle-interest" required>
+                    <option value="">Choose a category</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Cruiser">Cruiser</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Touring">Touring</option>
+                    <option value="Naked">Naked</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="visitor-message">Your message:</label>
+                <textarea id="visitor-message" name="visitor-message" rows="5"
+                    placeholder="What would you like to learn about motorcycles?" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+
+                <p id="form-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Motorcycle.inc</p>
+        <p>Gustavo da Silva Pereira</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>

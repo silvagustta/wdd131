@@ -24,4 +24,28 @@
     form {
         margin: 1.5rem auto;
     }
+    
+    .header-content {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+        width: auto;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    #community-form {
+        margin: 2rem auto;
+    }
 }

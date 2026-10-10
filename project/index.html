@@ -23,38 +23,42 @@
 </head>
 
 <body>
+
     <header>
-        <div>
-            <a href="index.html">Motorcycle.inc</a>
+        <div class="header-content">
+            <a class="site-logo" href="index.html">Motorcycle.inc</a>
 
-            <nav>
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="primary-navigation">
+                ☰
+            </button>
+
+            <nav id="primary-navigation">
                 <ul>
-
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="motorcycles.html">Motorcycles</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About Us</a>
-                    </li>
-                    <li>
-                        <a href="references.html">References</a>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="motorcycles.html">Motorcycles</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="references.html">References</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+
     <main>
         <section class="hero">
             <h1>Discover your Next Motorcycle</h1>
             <div class="hero-image">
-                <img src="images/hero.webp" alt="Sport motorcycle riding on a road">
+                <img 
+                    src="images/hero.webp" 
+                    alt="Sport motorcycle riding on a road"
+                    width="1200"
+                    height="600"
+                    fetchpriority="high"
+                >
             </div>
             <p>
-                Here at Motorcycle.inc, we help you to find your dream motorcycle 
+                Here at Motorcycle.inc, we help you to find your dream motorcycle
                 and we introduce you into our community.
             </p>
             <a href="motorcycles.html">Explore...</a>

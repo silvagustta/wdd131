@@ -54,57 +54,77 @@ const motorcycles = [
         name: "YZF-R1",
         brand: "Yamaha",
         category: "Sport",
-        description: "A high-performance sport motorcycle designed for track-inspired riding."
+        description: "A high-performance sport motorcycle designed for track-inspired riding.",
+        image: "images/yzf-r1.webp"
     },
     {
         name: "Ninja ZX-6R",
         brand: "Kawasaki",
         category: "Sport",
-        description: "A middleweight sport motorcycle built for responsive performance."
+        description: "A middleweight sport motorcycle built for responsive performance.",
+        image: "images/ninja-zx6r.webp"
     },
     {
         name: "Fat Boy",
         brand: "Harley-Davidson",
         category: "Cruiser",
-        description: "A cruiser known for its bold styling and relaxed riding position."
+        description: "A cruiser known for its bold styling and relaxed riding position.",
+        image: "images/fat-boy.webp"
     },
     {
         name: "Africa Twin",
         brand: "Honda",
         category: "Adventure",
-        description: "An adventure motorcycle designed for road trips and off-road exploration."
+        description: "An adventure motorcycle designed for road trips and off-road exploration.",
+        image: "images/africa-twin.webp"
     },
     {
         name: "R 1300 GS",
         brand: "BMW",
         category: "Adventure",
-        description: "A versatile adventure motorcycle made for long-distance journeys."
+        description: "A versatile adventure motorcycle made for long-distance journeys.",
+        image: "images/r1300-gs.webp"
     },
     {
         name: "Street Glide",
         brand: "Harley-Davidson",
         category: "Touring",
-        description: "A touring motorcycle designed for comfortable long-distance rides."
+        description: "A touring motorcycle designed for comfortable long-distance rides.",
+        image: "images/street-glide.webp"
     },
     {
         name: "MT-07",
         brand: "Yamaha",
         category: "Naked",
-        description: "A lightweight naked motorcycle with an upright riding position."
+        description: "A lightweight naked motorcycle with an upright riding position.",
+        image: "images/mt07.webp"
     },
     {
         name: "Z900",
         brand: "Kawasaki",
         category: "Naked",
-        description: "A naked motorcycle combining sporty performance and everyday usability."
+        description: "A naked motorcycle combining sporty performance and everyday usability.",
+        image: "images/z900.webp"
+    },
+    {
+        name: "FZ15",
+        brand: "Yamaha",
+        category: "Naked",
+        description: "A lightweight street motorcycle with modern styling, an upright riding position, and everyday practicality.",
+        image: "images/fz15.webp"
+    },
+    {
+        name: "R15",
+        brand: "Yamaha",
+        category: "Sport",
+        description: "A fully faired sport motorcycle with an aggressive design inspired by Yamaha's R-series.",
+        image: "images/r15.webp"
     }
 ];
-
 
 // ================================
 // 3. FEATURED MOTORCYCLES ON HOME
 // ================================
-
 const featuredContainer = document.querySelector("#featured-motorcycles");
 
 if (featuredContainer) {
@@ -112,6 +132,15 @@ if (featuredContainer) {
         const card = `
             <article class="motorcycle-card">
                 <h3>${motorcycle.brand} ${motorcycle.name}</h3>
+
+                <img
+                    src="${motorcycle.image}"
+                    alt="${motorcycle.brand} ${motorcycle.name}"
+                    loading="lazy"
+                    width="400"
+                    height="300"
+                >
+
                 <p><strong>Category:</strong> ${motorcycle.category}</p>
                 <p>${motorcycle.description}</p>
             </article>
@@ -120,7 +149,6 @@ if (featuredContainer) {
         featuredContainer.insertAdjacentHTML("beforeend", card);
     });
 }
-
 
 // ================================
 // 4. FAVORITES WITH LOCAL STORAGE
@@ -166,6 +194,7 @@ function saveFavorite(motorcycleName) {
 const motorcycleContainer = document.querySelector("#motorcycle-container");
 const categoryFilter = document.querySelector("#category-filter");
 
+
 function displayMotorcycles(motorcycleList) {
     if (!motorcycleContainer) {
         return;
@@ -180,6 +209,15 @@ function displayMotorcycles(motorcycleList) {
         const card = `
             <article class="motorcycle-card">
                 <h2>${motorcycle.brand} ${motorcycle.name}</h2>
+
+                <img
+                    src="${motorcycle.image}"
+                    alt="${motorcycle.brand} ${motorcycle.name}"
+                    loading="lazy"
+                    width="400"
+                    height="300"
+                >
+
                 <p><strong>Category:</strong> ${motorcycle.category}</p>
                 <p>${motorcycle.description}</p>
 
@@ -195,6 +233,7 @@ function displayMotorcycles(motorcycleList) {
         motorcycleContainer.insertAdjacentHTML("beforeend", card);
     });
 }
+
 
 // Show all motorcycles when the catalog opens
 if (motorcycleContainer) {
@@ -273,4 +312,49 @@ if (currentYear) {
 
 if (lastModified) {
     lastModified.textContent = document.lastModified;
+}
+
+// ================================
+// 9. VALIDATION
+// ================================
+const communityForm = document.querySelector("#community-form");
+
+if (communityForm) {
+    communityForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const visitorName = document.querySelector("#visitor-name").value.trim();
+        const favoriteCategory = document.querySelector("#motorcycle-interest").value;
+        const formMessage = document.querySelector("#form-message");
+
+        if (visitorName === "" || favoriteCategory === "") {
+            formMessage.textContent = "Please complete all required fields.";
+            return;
+        }
+
+        formMessage.textContent =
+            `Thank you, ${visitorName}! Your interest in ${favoriteCategory} motorcycles has been recorded for this demo.`;
+
+        communityForm.reset();
+    });
+}
+
+// ================================
+// 10. NAV
+// ================================
+const menuToggle = document.querySelector(".menu-toggle");
+const primaryNavigation = document.querySelector("#primary-navigation");
+
+if (menuToggle && primaryNavigation) {
+    menuToggle.addEventListener("click", function () {
+        const isOpen = primaryNavigation.classList.toggle("open");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
 }
